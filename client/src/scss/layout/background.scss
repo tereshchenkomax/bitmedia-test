@@ -1,27 +1,29 @@
 .wavy-background {
-  background: linear-gradient(92.09deg, $color-primary-dark 2.29%, $color-primary 96.79%);
+  background: url("../../wavy-bg.jpg");
   max-width: 100vw;
-  height: 655px;
-  &::before{
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 700px;
-    height: 80px;
-    background-color: white;
-    left: 5px;
-    top: 620px;
-  }
-  &::before{
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 700px;
-    height: 80px;
-    background-color: white;
-    right: -5px;
-    top: 620px;
-  }
+  min-height: 87.3rem;
+  //&::before{
+  //  content: "";
+  //  display: block;
+  //  position: absolute;
+  //  border-radius: 100% 50%;
+  //  width: 700px;
+  //  height: 80px;
+  //  background-image: radial-gradient(circle at 10px -15px, transparent 20px, #fff 21px);
+  //  left: 5px;
+  //  top: 620px;
+  //}
+  //&::after{
+  //  content: "";
+  //  display: block;
+  //  position: absolute;
+  //  border-radius: 100% 50%;
+  //  width: 700px;
+  //  height: 80px;
+  //  background-color: white;
+  //  right: -5px;
+  //  top: 620px;
+  //}
 }
+
+
