@@ -10,10 +10,18 @@ router.get('/', function (req, res, next) {
 	const myParam = urlParams.get('current_page');
 	const myParam1 = urlParams.get('users_number');
 	let jsonaaa = getJsonFromUrl(req.url);
-	const result = users.map(a => ({
-		...a,
-		...users_statistic.find(b => b.user_id === a.id) // _.find(array2, 'skuId') <-- or with lodash
-	}));
+	const result = users.map(a => {
+		let userclicks = 0;
+		let userviews = 0;
+		users_statistic.filter(b => {
+			if (b.user_id === a.id) {
+				userclicks += b.clicks;
+				userviews += b.page_views
+			}
+		});
+
+		return {...a, userclicks, userviews}
+	});
 	console.log(jsonaaa);
 	console.log(myParam,myParam1);
 
