@@ -1,4 +1,5 @@
 import React from "react";
+import {useTable, useSortBy, usePagination} from "react-table";
 
 export function Table({ columns, data }) {
     // Use the state and functions returned from useTable to build your UI
