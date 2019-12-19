@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../../components/Button";
 import {Link} from 'react-router-dom'
-// import iPhone from '../../iPhone.png'
+import iPhone from '../../iPhone.png'
 
 const IphoneSection = () => {
 	return (
@@ -27,7 +27,7 @@ const IphoneSection = () => {
 				</div>
 				<div className='col-1-of-3'>
 					<div>
-						{/*<img src={iPhone ? iPhone: null} alt="Iphone"/>*/}
+						<img src={iPhone ? iPhone: null} alt="Iphone"/>
 					</div>
 				</div>
 			</div>

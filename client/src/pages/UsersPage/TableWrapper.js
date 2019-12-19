@@ -47,7 +47,7 @@ export function TableWrapper() {
     const [pageCount, setPageCount] = useState(0);
     const fetchIdRef = useRef(0);
 
-    const fetchData = useCallback(async ({ pageSize, pageIndex }) => {
+    const fetchData = useCallback(async ({pageSize, pageIndex}) => {
         // This will get called when the table needs new data
         // You could fetch your data from literally anywhere,
         // even a server.
@@ -71,6 +71,10 @@ export function TableWrapper() {
     }, []);
 
     return (
-        <Table columns={columns} data={data} fetchData={fetchData} loading={loading} pageCount={pageCount}/>
+        <div className='row'>
+            <h2 style={{  'textAlign': 'left'}} className='has-margin-bottom-small has-margin-top-small'><strong>Users
+                statistics</strong></h2>
+            <Table columns={columns} data={data} fetchData={fetchData} loading={loading} pageCount={pageCount}/>
+        </div>
     )
 }

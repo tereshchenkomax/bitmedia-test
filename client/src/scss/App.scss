@@ -1,11 +1,12 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
-@import "layout/header";
-@import "layout/grid";
-@import "layout/background";
 @import "base/typography";
 @import "base/base";
 @import "base/utilites";
-@import "components/iphone-section";
 @import "components/button";
+@import "layout/iphone-section";
+@import "layout/header";
+@import "layout/grid";
+@import "layout/background";
+@import "layout/table";
 

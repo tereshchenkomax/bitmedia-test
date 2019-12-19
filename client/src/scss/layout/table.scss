@@ -1,0 +1,23 @@
+table thead {
+  background: $color-primary;
+}
+
+thead th {
+  padding: 1.4rem 2rem;
+}
+
+table tr th:nth-child(1){
+  border-radius: 0.7rem 0 0 0;
+}
+
+table tr th:nth-last-child(1){
+  border-radius: 0 0.7rem 0 0;
+}
+
+table tbody tr:nth-child(even) {
+  background: $table-bg-primary;
+}
+
+table tbody tr:nth-child(odd) {
+  background: $table-bg-secondary;
+}

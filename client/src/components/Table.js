@@ -43,21 +43,6 @@ export function Table({
 	// Render the UI for your table
 	return (
 		<>
-      <pre>
-        <code>
-          {JSON.stringify(
-			  {
-				  pageIndex,
-				  pageSize,
-				  pageCount,
-				  canNextPage,
-				  canPreviousPage,
-			  },
-			  null,
-			  2
-		  )}
-        </code>
-      </pre>
 			<table {...getTableProps()}>
 				<thead>
 				{headerGroups.map(headerGroup => (
