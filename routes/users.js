@@ -6,7 +6,7 @@ const users_statistic = require('../users_statistic');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     const pageSize = req.query.users_number || 50;
-    const pageIndex = req.query.current_page + 1 || 1;
+    const pageIndex = parseInt(req.query.current_page) + 1 || 1;
 	const usersSlised = users.slice(pageSize * pageIndex - pageSize, pageSize * pageIndex);
     const result = usersSlised.map(a => {
         let total_clicks = 0;

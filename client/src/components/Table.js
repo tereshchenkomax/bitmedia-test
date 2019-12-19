@@ -29,8 +29,9 @@ export function Table({
 		{
 			columns,
 			data,
-			initialState: {pageIndex: 0},
+			initialState: {pageIndex: 0, pageSize: 50},
             manualPagination: true,
+			pageCount: controlledPageCount,
 		},
 		usePagination
 	)
