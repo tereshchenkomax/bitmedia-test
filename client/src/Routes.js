@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import SingleUserPage from './pages/SingleUserPage/'
 import UsersPage from './pages/UsersPage/'
 import MainPage from './pages/MainPage/'
-import Header from './Header'
 
 const Routes = () => {
 	return (

@@ -1,13 +1,16 @@
 import React, {Fragment} from 'react';
+import {Link} from "react-router-dom";
 
 const Header = ({noBg}) => {
     return (
         <Fragment>
             <header className={noBg ? 'is-bg-transparent' : null}>
                 <div className="row">
-                    <div className='has-padding-bottom-medium has-padding-top-medium'>
-                        <h1 className='logo-text'>AppCo</h1>
-                    </div>
+                    <Link to='/'>
+                        <div className='has-padding-bottom-medium has-padding-top-medium'>
+                            <h1 className='logo-text'>AppCo</h1>
+                        </div>
+                    </Link>
                 </div>
             </header>
         </Fragment>

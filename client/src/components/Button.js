@@ -2,9 +2,9 @@ import React from 'react';
 
 const Button = ({text}) => {
 	return (
-		<button className='btn btn--white'>
+		<a className='btn btn--white' href='#'>
 			{text}
-		</button>
+		</a>
 	);
 };
 

@@ -33,7 +33,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 ::selection {
-  background-color: $color-primary;
+  //background-color: $color-primary;
   color: $color-white;
 }
