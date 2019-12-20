@@ -3,7 +3,7 @@ import {useTable, useSortBy, usePagination} from "react-table";
 
 export function Table({
 						  columns, data,
-                          fetchData, loading,
+						  fetchData, loading,
 						  pageCount: controlledPageCount,
 					  }) {
 	// Use the state and functions returned from useTable to build your UI
@@ -30,7 +30,7 @@ export function Table({
 			columns,
 			data,
 			initialState: {pageIndex: 0, pageSize: 50},
-            manualPagination: true,
+			manualPagination: true,
 			pageCount: controlledPageCount,
 		},
 		usePagination
@@ -79,6 +79,18 @@ export function Table({
 					{'<'}
 				</button>
 				{' '}
+				<button onClick={() => gotoPage(pageIndex - 1)} disabled={!canPreviousPage}>
+					{pageIndex}
+				</button>
+				{' '}
+				<button>
+					{pageIndex+1}
+				</button>
+				{' '}
+				<button onClick={() => gotoPage(pageIndex + 1)} disabled={!canNextPage}>
+					{pageIndex + 2}
+				</button>
+				{' '}
 				<button onClick={() => nextPage()} disabled={!canNextPage}>
 					{'>'}
 				</button>
@@ -87,36 +99,36 @@ export function Table({
 					{'>>'}
 				</button>
 				{' '}
-				<span>
-          Page{' '}
-					<strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-				<span>
-          | Go to page:{' '}
-					<input
-						type="number"
-						defaultValue={pageIndex + 1}
-						onChange={e => {
-							const page = e.target.value ? Number(e.target.value) - 1 : 0
-							gotoPage(page)
-						}}
-						style={{width: '100px'}}
-					/>
-        </span>{' '}
-				<select
-					value={pageSize}
-					onChange={e => {
-						setPageSize(Number(e.target.value))
-					}}
-				>
-					{[10, 20, 30, 40, 50].map(pageSize => (
-						<option key={pageSize} value={pageSize}>
-							Show {pageSize}
-						</option>
-					))}
-				</select>
+		{/*		<span>*/}
+        {/*  Page{' '}*/}
+		{/*			<strong>*/}
+        {/*    {pageIndex + 1} of {pageOptions.length}*/}
+        {/*  			</strong>{' '}*/}
+        {/*		</span>*/}
+		{/*		<span>*/}
+        {/*  | Go to page:{' '}*/}
+		{/*			<input*/}
+		{/*				type="number"*/}
+		{/*				defaultValue={pageIndex + 1}*/}
+		{/*				onChange={e => {*/}
+		{/*					const page = e.target.value ? Number(e.target.value) - 1 : 0*/}
+		{/*					gotoPage(page)*/}
+		{/*				}}*/}
+		{/*				style={{width: '100px'}}*/}
+		{/*			/>*/}
+        {/*</span>{' '}*/}
+		{/*		<select*/}
+		{/*			value={pageSize}*/}
+		{/*			onChange={e => {*/}
+		{/*				setPageSize(Number(e.target.value))*/}
+		{/*			}}*/}
+		{/*		>*/}
+		{/*			{[10, 20, 30, 40, 50].map(pageSize => (*/}
+		{/*				<option key={pageSize} value={pageSize}>*/}
+		{/*					Show {pageSize}*/}
+		{/*				</option>*/}
+		{/*			))}*/}
+		{/*		</select>*/}
 			</div>
 		</>
 	)
