@@ -72,7 +72,7 @@ export function TableWrapper() {
 
     return (
         <div className='row'>
-            <h2 style={{  'textAlign': 'left'}} className='has-margin-bottom-small has-margin-top-small'><strong>Users
+            <h2 style={{  'textAlign': 'left'}} className='has-margin-bottom-medium has-margin-top-medium'><strong>Users
                 statistics</strong></h2>
             <Table columns={columns} data={data} fetchData={fetchData} loading={loading} pageCount={pageCount}/>
         </div>

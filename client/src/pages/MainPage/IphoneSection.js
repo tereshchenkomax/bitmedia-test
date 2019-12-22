@@ -7,14 +7,14 @@ const IphoneSection = () => {
 	return (
 		<section className='iphone-section'>
 			<div className="row">
-				<div className='col-2-of-3'>
-					<div className="has-margin-top-medium has-margin-bottom-medium">
+				<div className='col-1-of-2'>
+					<div className="has-margin-top-large has-margin-bottom-large">
 						<h1>
 							<strong>Brainstorming</strong> for desired perfect Usability
 						</h1>
 					</div>
 
-					<p>
+					<p className='paragraph'>
 						Our design projects are fresh and simple and will benefit your business greatly. Learn more
 						about
 						our work!
@@ -25,8 +25,8 @@ const IphoneSection = () => {
 				</Link>
 
 				</div>
-				<div className='col-1-of-3'>
-					<div>
+				<div className='col-1-of-2'>
+					<div className='flex flex-center'>
 						<img src={iPhone ? iPhone: null} alt="Iphone"/>
 					</div>
 				</div>

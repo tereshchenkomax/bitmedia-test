@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  a {
+    padding: 1.4rem 1.9rem;
+    border-radius: .7rem;
+    font-size: 1.6rem;
+    border: 2px solid $table-bg-secondary;
+    margin: 0 .4rem;
+
+    &.active {
+      background: $color-primary;
+      color: $color-white;
+    }
+  }
+}

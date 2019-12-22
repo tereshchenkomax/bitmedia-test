@@ -43,7 +43,7 @@ export function Table({
 	// Render the UI for your table
 	return (
 		<>
-			<table {...getTableProps()}>
+			<table {...getTableProps()} className='has-margin-bottom-small'>
 				<thead>
 				{headerGroups.map(headerGroup => (
 					<tr {...headerGroup.getHeaderGroupProps()}>
@@ -71,34 +71,27 @@ export function Table({
         This is just a very basic UI implementation:
       */}
 			<div className="pagination">
-				<button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+				<a onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
 					{'<<'}
-				</button>
-				{' '}
-				<button onClick={() => previousPage()} disabled={!canPreviousPage}>
+				</a>
+				<a onClick={() => previousPage()} disabled={!canPreviousPage}>
 					{'<'}
-				</button>
-				{' '}
-				<button onClick={() => gotoPage(pageIndex - 1)} disabled={!canPreviousPage}>
+				</a>
+				<a onClick={() => gotoPage(pageIndex - 1)} disabled={!canPreviousPage} >
 					{pageIndex}
-				</button>
-				{' '}
-				<button>
+				</a>
+				<a className='active'>
 					{pageIndex+1}
-				</button>
-				{' '}
-				<button onClick={() => gotoPage(pageIndex + 1)} disabled={!canNextPage}>
+				</a>
+				<a onClick={() => gotoPage(pageIndex + 1)} disabled={!canNextPage}>
 					{pageIndex + 2}
-				</button>
-				{' '}
-				<button onClick={() => nextPage()} disabled={!canNextPage}>
+				</a>
+				<a onClick={() => nextPage()} disabled={!canNextPage}>
 					{'>'}
-				</button>
-				{' '}
-				<button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+				</a>
+				<a onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
 					{'>>'}
-				</button>
-				{' '}
+				</a>
 		{/*		<span>*/}
         {/*  Page{' '}*/}
 		{/*			<strong>*/}

@@ -7,7 +7,7 @@ const Header = ({noBg}) => {
             <header className={noBg ? 'is-bg-transparent' : null}>
                 <div className="row">
                     <Link to='/'>
-                        <div className='has-padding-bottom-medium has-padding-top-medium'>
+                        <div className='has-padding-bottom-large has-padding-top-large'>
                             <h1 className='logo-text'>AppCo</h1>
                         </div>
                     </Link>
