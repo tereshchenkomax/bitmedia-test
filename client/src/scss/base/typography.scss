@@ -57,5 +57,8 @@ p {
   color: $color-white;
   &.paragraph {
     font-size: 2rem;
+    &-gray{
+      color: $color-grey;
+    }
   }
 }
