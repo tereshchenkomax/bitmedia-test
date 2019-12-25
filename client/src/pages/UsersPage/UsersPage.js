@@ -1,14 +1,23 @@
-import React, {useState, useEffect} from 'react';
+import React, {Fragment} from 'react';
 import Header from "../../Header";
 import {TableWrapper} from "../UsersPage/TableWrapper"
 import Footer from "../../components/Footer";
+import {Breadcrumbs, BreadcrumbsItem} from 'react-breadcrumbs-dynamic'
+
 const UsersPage = () => {
     return (
-        <div>
+        <Fragment>
             <Header/>
+            <Breadcrumbs
+                separator={<b> > </b>}
+                duplicateProps={{to: 'href'}}
+            />
+
+            <BreadcrumbsItem to='/'>Home</BreadcrumbsItem>
+            <BreadcrumbsItem to='/users'>Users</BreadcrumbsItem>
             <TableWrapper/>
             <Footer/>
-        </div>
+        </Fragment>
     );
 };
 

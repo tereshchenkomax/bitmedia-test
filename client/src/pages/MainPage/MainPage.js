@@ -13,7 +13,6 @@ const MainPage = () => {
 			<div className='wavy-background'>
 				<Header noBg={true}/>
 				<IphoneSection/>
-
 			</div>
 			<FeaturesSection/>
 			<LaptopSection/>

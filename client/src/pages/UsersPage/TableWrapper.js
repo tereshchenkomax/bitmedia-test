@@ -57,12 +57,10 @@ export function TableWrapper() {
 
         // Set the loading state
         setLoading(true);
-        console.log(pageSize, pageIndex);
 
         if (fetchId === fetchIdRef.current) {
             const response = await request(`/usersendpoint?current_page=${pageIndex}&users_number=${pageSize}`);
             const json = await response.json();
-            console.log(json);
             setData(json);
             setPageCount(20);
             setLoading(false)
