@@ -1,23 +1,59 @@
-table thead {
-  background: $color-primary;
-}
-
-thead th {
-  padding: 1.4rem 2rem;
-}
-
-table tr th:nth-child(1){
+.table .tr .th:nth-child(1) {
   border-radius: 0.7rem 0 0 0;
 }
 
-table tr th:nth-last-child(1){
+.table .tr .th:nth-last-child(1) {
   border-radius: 0 0.7rem 0 0;
 }
 
-table tbody tr:nth-child(even) {
+.table .tbody .tr:nth-child(even) {
   background: $table-bg-primary;
 }
 
-table tbody tr:nth-child(odd) {
+.table .tbody .tr:nth-child(odd) {
   background: $table-bg-secondary;
+}
+
+.table {
+  display: block;
+  overflow: auto;
+
+  border-spacing: 0;
+  border: 1px solid $color-white;
+
+  .thead {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .th {
+      padding: 1.4rem 2rem !important;
+      background: $color-primary;
+    }
+  }
+
+  .tbody {
+
+  }
+
+  .tr {
+    &:last-child {
+      .td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .th,
+  .td {
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid $color-white;
+    border-right: 1px solid $color-white;
+    font-size: 1.6rem;
+    position: relative;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
 }

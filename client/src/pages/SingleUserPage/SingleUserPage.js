@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Header from "../../Header";
 import {Breadcrumbs, BreadcrumbsItem} from "react-breadcrumbs-dynamic";
 
-const SingleUserPage = () => {
+const SingleUserPage = (props) => {
+	console.log(props);
 	return (
 		<div>
 			<Header/>
@@ -12,8 +13,8 @@ const SingleUserPage = () => {
 				duplicateProps={{to: 'href'}}
 			/>
 
-			<BreadcrumbsItem to='/'>Home</BreadcrumbsItem>
-			<BreadcrumbsItem to='/users'>Users</BreadcrumbsItem>
+			<BreadcrumbsItem to='/'>Main page</BreadcrumbsItem>
+			<BreadcrumbsItem to='/users'>User statistics</BreadcrumbsItem>
 			<BreadcrumbsItem to='/user/1'>SingleUserPage</BreadcrumbsItem>
 		</div>
 	);

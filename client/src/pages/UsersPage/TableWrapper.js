@@ -8,22 +8,28 @@ export function TableWrapper() {
             {
                 Header: 'Id',
                 accessor: 'id',
+                width: 50,
             },
             {
                 Header: 'First Name',
                 accessor: 'first_name',
+                width: 130
             },
             {
                 Header: 'Last Name',
                 accessor: 'last_name',
+                width: 130
+
             },
             {
                 Header: 'Email',
                 accessor: 'email',
+                width: 280
             },
             {
                 Header: 'Gender',
                 accessor: 'gender',
+                width: 130
             },
             {
                 Header: 'IP address',
@@ -32,10 +38,13 @@ export function TableWrapper() {
             {
                 Header: 'Total Clicks',
                 accessor: 'total_clicks',
+                width: 140
             },
             {
                 Header: 'Total page views',
                 accessor: 'total_page_views',
+                width: 140
+
             }
 
         ],
@@ -72,7 +81,8 @@ export function TableWrapper() {
         <div className='row'>
             <h2 style={{  'textAlign': 'left'}} className='has-margin-bottom-medium has-margin-top-medium'><strong>Users
                 statistics</strong></h2>
-            <Table columns={columns} data={data} fetchData={fetchData} loading={loading} pageCount={pageCount}/>
+            <Table columns={columns} data={data} fetchData={fetchData} loading={loading} pageCount={pageCount}
+            />
         </div>
     )
 }

@@ -13,8 +13,8 @@ const UsersPage = () => {
                 duplicateProps={{to: 'href'}}
             />
 
-            <BreadcrumbsItem to='/'>Home</BreadcrumbsItem>
-            <BreadcrumbsItem to='/users'>Users</BreadcrumbsItem>
+            <BreadcrumbsItem to='/'>Main page</BreadcrumbsItem>
+            <BreadcrumbsItem to='/users'>User satistics</BreadcrumbsItem>
             <TableWrapper/>
             <Footer/>
         </Fragment>

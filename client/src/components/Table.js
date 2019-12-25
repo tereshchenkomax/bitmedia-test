@@ -1,11 +1,23 @@
 import React, {useEffect} from "react";
-import {useTable, useSortBy, usePagination} from "react-table";
+import {useTable, useResizeColumns, useFlexLayout, usePagination} from "react-table";
+import {Link} from "react-router-dom";
 
 export function Table({
 						  columns, data,
 						  fetchData, loading,
 						  pageCount: controlledPageCount,
 					  }) {
+
+	const defaultColumn = React.useMemo(
+		() => ({
+			// When using the useFlexLayout:
+			minWidth: 50, // minWidth is only used as a limit for resizing
+			width: 160, // width is used for both the flex-basis and flex-grow
+			maxWidth: 280, // maxWidth is only used as a limit for resizing
+		}),
+		[]
+	)
+
 	// Use the state and functions returned from useTable to build your UI
 	const {
 		getTableProps,
@@ -32,44 +44,56 @@ export function Table({
 			initialState: {pageIndex: 0, pageSize: 50},
 			manualPagination: true,
 			pageCount: controlledPageCount,
+			defaultColumn,
 		},
-		usePagination
+		usePagination,
+		useResizeColumns,
+		useFlexLayout
 	)
 
 	useEffect(() => {
 		fetchData({pageIndex, pageSize})
-	}, [fetchData, pageIndex, pageSize])
+	}, [fetchData, pageIndex, pageSize]);
 
 	// Render the UI for your table
 	return (
 		<>
-			<table {...getTableProps()} className='has-margin-bottom-small'>
-				<thead>
-				{headerGroups.map(headerGroup => (
-					<tr {...headerGroup.getHeaderGroupProps()}>
-						{headerGroup.headers.map(column => (
-							<th {...column.getHeaderProps()}>{column.render('Header')}</th>
-						))}
-					</tr>
-				))}
-				</thead>
-				<tbody {...getTableBodyProps()}>
-				{page.map((row, i) => {
-					prepareRow(row)
-					return (
-						<tr {...row.getRowProps()}>
-							{row.cells.map(cell => {
-								return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-							})}
-						</tr>
-					)
-				})}
-				</tbody>
-			</table>
-			{/*
-        Pagination can be built however you'd like.
-        This is just a very basic UI implementation:
-      */}
+			<div {...getTableProps()} className="table has-margin-bottom-small">
+				<div className='thead'>
+					{headerGroups.map(headerGroup => (
+						<div {...headerGroup.getHeaderGroupProps()} className="tr">
+							{headerGroup.headers.map(column => (
+								<div {...column.getHeaderProps()}
+									className={`th`}
+								>
+									{column.render('Header')}
+								</div>
+							))}
+						</div>
+					))}
+				</div>
+
+				<div {...getTableBodyProps()} className="tbody">
+					{page.map((row, i) => {
+						prepareRow(row)
+						return (
+							<Link {...row.getRowProps()} className="tr"
+								  to={"user/" + row.id} id={row.id}
+								  first_name={row.first_name} last_name={row.last_name}
+							>
+								{row.cells.map(cell => {
+									return (
+										<div {...cell.getCellProps()} className="td">
+											{cell.render('Cell')}
+										</div>
+									)
+								})}
+							</Link>
+						)
+					})}
+				</div>
+			</div>
+
 			<div className="pagination">
 				<a onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
 					{'<<'}
@@ -77,11 +101,11 @@ export function Table({
 				<a onClick={() => previousPage()} disabled={!canPreviousPage}>
 					{'<'}
 				</a>
-				<a onClick={() => gotoPage(pageIndex - 1)} disabled={!canPreviousPage} >
+				<a onClick={() => gotoPage(pageIndex - 1)} disabled={!canPreviousPage}>
 					{pageIndex}
 				</a>
 				<a className='active'>
-					{pageIndex+1}
+					{pageIndex + 1}
 				</a>
 				<a onClick={() => gotoPage(pageIndex + 1)} disabled={!canNextPage}>
 					{pageIndex + 2}
@@ -92,36 +116,6 @@ export function Table({
 				<a onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
 					{'>>'}
 				</a>
-		{/*		<span>*/}
-        {/*  Page{' '}*/}
-		{/*			<strong>*/}
-        {/*    {pageIndex + 1} of {pageOptions.length}*/}
-        {/*  			</strong>{' '}*/}
-        {/*		</span>*/}
-		{/*		<span>*/}
-        {/*  | Go to page:{' '}*/}
-		{/*			<input*/}
-		{/*				type="number"*/}
-		{/*				defaultValue={pageIndex + 1}*/}
-		{/*				onChange={e => {*/}
-		{/*					const page = e.target.value ? Number(e.target.value) - 1 : 0*/}
-		{/*					gotoPage(page)*/}
-		{/*				}}*/}
-		{/*				style={{width: '100px'}}*/}
-		{/*			/>*/}
-        {/*</span>{' '}*/}
-		{/*		<select*/}
-		{/*			value={pageSize}*/}
-		{/*			onChange={e => {*/}
-		{/*				setPageSize(Number(e.target.value))*/}
-		{/*			}}*/}
-		{/*		>*/}
-		{/*			{[10, 20, 30, 40, 50].map(pageSize => (*/}
-		{/*				<option key={pageSize} value={pageSize}>*/}
-		{/*					Show {pageSize}*/}
-		{/*				</option>*/}
-		{/*			))}*/}
-		{/*		</select>*/}
 			</div>
 		</>
 	)
