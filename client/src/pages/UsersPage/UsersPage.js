@@ -5,9 +5,6 @@ import Footer from "../../components/Footer";
 import {Breadcrumbs, BreadcrumbsItem} from 'react-breadcrumbs-dynamic'
 
 const UsersPage = (props) => {
-    useEffect(() => {
-        console.log(props.location.state)
-    }, []);
 
     return (
         <Fragment>

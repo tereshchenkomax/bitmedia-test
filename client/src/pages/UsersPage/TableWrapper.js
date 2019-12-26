@@ -51,7 +51,7 @@ export function TableWrapper() {
         []
     );
 
-    const [data, setData] = React.useState([]);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [pageCount, setPageCount] = useState(0);
     const fetchIdRef = useRef(0);
