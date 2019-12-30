@@ -18,8 +18,8 @@ const UsersPage = (props) => {
                 <BreadcrumbsItem to='/'>Main page</BreadcrumbsItem>
                 <BreadcrumbsItem to='/users'>Stats</BreadcrumbsItem>
                 <TableWrapper/>
-                <Footer/>
             </div>
+            <Footer/>
         </Fragment>
     );
 };
