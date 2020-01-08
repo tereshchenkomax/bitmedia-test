@@ -1,6 +1,4 @@
 import React, {Fragment} from 'react';
-import Candles from '../../icons/candles.png'
-import Lock from '../../icons/lock.png'
 
 const FeaturesCards = () => {
     return (

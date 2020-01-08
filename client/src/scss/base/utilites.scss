@@ -1,4 +1,4 @@
-
+//margin
 .has-margin-top-large {
   margin-top: 2.4rem;
 }
@@ -9,6 +9,10 @@
 
 .has-margin-top-small {
   margin-top: 1.2rem;
+}
+
+.has-margin-bottom-huge {
+  margin-bottom: 4rem;
 }
 
 .has-margin-bottom-large {
@@ -23,6 +27,12 @@
   margin-bottom: 1.2rem;
 }
 
+.has-margin-sides-small {
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+}
+
+//padding
 .has-padding-top-large {
   padding-top: 2.4rem;
 }
@@ -57,4 +67,8 @@
   &-center{
     justify-content: center;
   }
+}
+
+.is-black {
+  color: $color-black;
 }

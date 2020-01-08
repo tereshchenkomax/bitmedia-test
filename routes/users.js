@@ -4,7 +4,7 @@ const users = require('../users');
 const users_statistic = require('../users_statistic');
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     const pageSize = req.query.users_number || 50;
     const pageIndex = parseInt(req.query.current_page) + 1 || 1;
 	const usersSlised = users.slice(pageSize * pageIndex - pageSize, pageSize * pageIndex);
@@ -21,5 +21,14 @@ router.get('/', function (req, res, next) {
     });
     res.send(result);
 });
+
+router.get('/singleuser', function (req, res) {
+    const userid = req.query.userid;
+    if (users.some(user => user.id === userid) ){
+        console.log('test')
+    }
+})
+
+
 
 module.exports = router;

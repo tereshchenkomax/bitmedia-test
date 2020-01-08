@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../../components/Button";
 import {Link} from 'react-router-dom'
-import iPhone from '../../iPhone.png'
+import iPhone from '../../icons/iPhoneX.svg'
 
 const IphoneSection = () => {
     return (
@@ -14,7 +14,7 @@ const IphoneSection = () => {
                         </h1>
                     </div>
 
-                    <p className='paragraph'>
+                    <p className='paragraph-medium'>
                         Our design projects are fresh and simple and will benefit your business greatly. Learn more
                         about
                         our work!

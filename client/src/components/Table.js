@@ -49,7 +49,7 @@ export function Table({
         usePagination,
         useResizeColumns,
         useFlexLayout
-    )
+    );
 
     useEffect(() => {
         fetchData({pageIndex, pageSize})
@@ -79,7 +79,7 @@ export function Table({
                         return (
                             <Link {...row.getRowProps()} className="tr"
                                   to={{
-                                      pathname: `user/${row.id}`,
+                                      pathname: `user/${parseInt(row.id) + 1 + pageIndex * pageSize}`,
                                       state: {
                                           last_name: row.original.last_name,
                                           first_name: row.original.first_name
