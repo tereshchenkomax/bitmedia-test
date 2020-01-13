@@ -19,7 +19,7 @@ const IphoneSection = () => {
                         about
                         our work!
                     </p>
-                    <Button text='View Stats' url='/users'/>
+                    <Button url='/users'>View Stats</Button>
                 </div>
                 <div className='col-1-of-2'>
                     <div className='flex flex-center'>
